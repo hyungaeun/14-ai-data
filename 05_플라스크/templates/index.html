@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인크루트 채용정보</title>
+</head>
+<body>
+    <h1>파이썬 채용공고</h1>
+
+    {% if jobs %}
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <h3>{{ job.title }}</h3>
+                    <p>회사명: {{ job.company }}</p>
+                    <p>근무지: {{ job.location }}</p>
+                    <p>
+                        <a href="{{ job.href }}" target="_blank">공고 보러가기</a>
+                    </p>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>채용공고가 없습니다.</p>
+    {% endif %}
+</body>
+</html>

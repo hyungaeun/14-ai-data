@@ -1,10 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from main import search 
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html")
+    return render_template("home.html")
 
 @app.route("/user/<userId>")
 def profile(userId):
